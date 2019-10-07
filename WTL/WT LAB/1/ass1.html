@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src ="jquery-3.3.1.js"></script>
+</head>
+<body>
+<fieldset>
+<form align = "centre" id = "form1"> 
+<p>
+<input type = "text" name = "name" placeholder="name"> </input></p><p>
+<input type = "text" name = "address" placeholder="address"> </input></p> <p>
+<input type = "text" name = "gender" placeholder="gender"> </input></p><p>
+<input type = "text" name = "city" placeholder="city"> </input></p>
+<p>
+<legend> Language </legend>
+<select name="language" form="form1">
+  <option value="English">English</option>
+  <option value="Hindi">Hindi</option>
+  <option value="Tamil">Tamil</option>
+  <option value="Telugu">Telugu</option>
+</select>
+</p>
+<p>
+<button onclick="loadXml()" type="button">submit</button>
+</p>
+<p>
+<input type="reset" value="Reset">
+</p>
+</form>
+</fieldset>
+<script>
+
+function loadXml(){
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+   if (this.readyState == 4 && this.status == 200) {
+       myFunction(this);
+   }
+};
+xhttp.open("GET", "customer.xml", true);
+xhttp.send();
+}
+
+function myFunction(xml) {
+
+    var xmlDoc = xml.responseXML;
+var customer = xmlDoc.createElement("customer");
+var name = xmlDoc.createElement("Name");
+var addr = xmlDoc.createElement("Address");
+var city = xmlDoc.createElement("City");
+customer.appendChild(name);
+customer.appendChild(addr);
+customer.appendChild(city);
+var newName = document.getElementsByName("name");
+	name.appendChild(newName);
+var newAddr = document.getElementsByName("address");
+	addr.appendChild(newAddr);
+var newCity = document.getElementsByName("address");
+	city.appendChild(newCity);
+xmlDoc.getElementsByTagName("customer-data")[0].appendChild(customer);
+
+}
+
+</script>
+</body>
+</html>
+

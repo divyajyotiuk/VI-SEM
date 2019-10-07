@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:sport.properties"/>	
+ 
+	<bean id="myFortune"
+    	class = "com.pogo.HappyFortuneService">  		
+    </bean>
+   
+    <bean id = "myCoach"
+    	class = "com.pogo.TrackCoach">
+    	
+    	<constructor-arg ref = "myFortune"/> 	
+    </bean>
+    
+    
+    <bean id = "myCoachb"
+    	class = "com.pogo.BaseballCoach"> 
+    	
+    	<constructor-arg ref = "myFortune"/> 	
+    </bean>
+    
+    <bean id = "cricketCoach"
+    	class = "com.pogo.CricketCoach">
+    	
+    	<property name = "fortuneService" ref = "myFortune"/>	
+    	<property name="team" value="${team}"/>
+    	<property name="email" value="${email}"/>
+    </bean>
+
+</beans>
+
+
+
+
+

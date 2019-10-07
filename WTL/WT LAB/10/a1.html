@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src = "angular.min.js"> </script>
+<script type="text/javascript">
+var app1 = angular.module('FirstApp',[]);
+app1.controller('FirstCtrl',function($scope)
+{
+	$scope.stud = {fname:'dj',fees:100, subjects:[ {name:'maths',mks:90},{name:'science', mks:89} ] };
+});
+</script>
+</head>
+<body ng-app="FirstApp" ng-controller="FirstCtrl" ">
+<div class="nam">
+First Name: <input type="checkbox" ng-model="subname">
+<br>
+Last Name: <input type="text" ng-model="lname">
+<br>
+<p>
+<span ng-show="subname">checkbox clicked</span>
+</p>
+</div>
+</body>
+
+</html>
+

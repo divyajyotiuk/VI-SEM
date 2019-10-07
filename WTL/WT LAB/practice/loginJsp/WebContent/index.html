@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+ <body onload="preventBack()"  onunload="">
+        <div style="border: 1px solid black;margin-left: 400px;margin-right: 400px;">
+        <form action="process.jsp">
+            Enter username<input type="text" name="uname" /><br><br>
+            Enter Password: <input type="password" name="password" /><br><br>
+            <input type="submit" value="Submit" />
+        </form>
+        </div>
+        <script type="text/javascript">
+           // window.history.forward();
+            function preventBack()
+            {
+                window.history.forward(1);
+                
+            }
+           // setTimeout("preventBack",0);
+            //window.onunload=function (){null};
+            
+                
+            
+            </script>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<customer><Name>Vaibhav Kumbhar</Name><Address>PICT, trimurti chowk,near pict college</Address><Gender>Male</Gender><Lang>C, C++, Java, Python, R, </Lang><City>dhankawadi, pune</City></customer>
+<customer><Name>Vaibhav Navnath Kumbhar</Name><Address>102, sumangal apartment, trimurti chowk,near pict college</Address><Gender>Male</Gender><Lang>Python, R, </Lang><City>dhankawadi, pune</City></customer><customer><Name>Rohit Kumbhar</Name><Address>Pimpri</Address><Gender>Male</Gender><Lang>C++, Python, R, </Lang><City>Chinchwad</City></customer></document>
